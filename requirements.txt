@@ -1,0 +1,5 @@
+Scrapy==1.5.0
+pymongo==3.6.0
+python-decouple==3.1
+Twisted==17.9.0
+shub==2.7.0

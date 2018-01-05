@@ -1,0 +1,7 @@
+*.py[co]
+.cache
+*.egg-info
+.eggs
+*.log
+.env
+.venv/
