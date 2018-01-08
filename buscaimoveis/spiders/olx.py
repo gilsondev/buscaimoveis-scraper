@@ -9,8 +9,7 @@ from buscaimoveis.items import PropertyItem
 
 class OLXSpider(CrawlSpider):
     name = "olx"
-    allowed_domains = ["df.olx.com.br"]
-    start_urls = ["http://df.olx.com.br/imoveis/venda"]
+    allowed_domains = ["olx.com.br"]
     rules = [
         Rule(
             LinkExtractor(allow=r'\?o=2'),
@@ -18,6 +17,14 @@ class OLXSpider(CrawlSpider):
             follow=True
         )
     ]
+
+    def __init__(self, state="df", *args, **kwargs):
+        super(OLXSpider, self).__init__(*args, **kwargs)
+        self.start_urls = [
+            "http://{state}.olx.com.br/imoveis/venda".format(
+                state=state
+            )
+        ]
 
     def parse_start_url(self, response):
         return self.parse_property_list(response)
