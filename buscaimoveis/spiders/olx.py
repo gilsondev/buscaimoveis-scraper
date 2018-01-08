@@ -1,4 +1,3 @@
-import logging
 import datetime
 
 from scrapy import Request
@@ -78,7 +77,8 @@ class OLXSpider(CrawlSpider):
 
             item['tax'] = response.xpath(
                 u'//*[@class="OLXad-details mb30px"]/div/ul/li/p/'
-                u'span[text() = "Condomínio:"]/following-sibling::strong/text()'
+                u'span[text() = "Condomínio:"]/'
+                'following-sibling::strong/text()'
             ).extract_first()
 
             area = response.xpath(
