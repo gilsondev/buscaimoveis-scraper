@@ -8,7 +8,7 @@ from scrapy.conf import settings
 from scrapy.exceptions import DropItem
 
 
-PHONE = r'([\(]?\d{2,3}[\)]?\s)?(\d\s)?\d{4,5}([\s|\-])?(\s\-\s)?\d{3,5}.'
+PHONE = r'([\(]?\d{2,3}[\)]?\s)?(\d\s)?\d{4,5}([\s|\-])?(\s\-\s)?\d{4,5}'
 COMPANIES = r'([cC]reci|CRECI|[dD]rone|[dD]ro\-ne|[cC]orretor[es]|[pP]lantão|[aA]éreas|[Aa]érea|[Aa]erea)' # noqa
 
 
